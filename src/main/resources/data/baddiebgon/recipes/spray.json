@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L",
+    "E",
+    "B"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "L": {
+      "item": "minecraft:lever"
+    }
+  },
+  "result": {
+    "item": "baddiebgon:spray",
+    "count": 1
+  }
+}
+
