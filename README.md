@@ -1,11 +1,11 @@
-![Baddie-B-Gon™](https://media.forgecdn.net/attachments/421/560/wordart.png "Baddie-B-Gon™")
+![Baddie-B-Gon™](https://user-images.githubusercontent.com/5335625/148668162-95c8bf1a-78a9-4dc8-ae04-b5dcfe73409a.png)
+
 **A Fabric mod providing an item that repels hostile mobs and an optional global mob filter (similar to [Bad Mobs for Forge](https://www.curseforge.com/minecraft/mc-mods/bad-mobs)).**
 
 
 # Recipe
 
-
-![Baddie-B-Gon™ Spray Recipe](https://media.forgecdn.net/attachments/421/529/recipe.png "Baddie-B-Gon™ Spray Recipe")
+<img width="118" alt="Baddie-B-Gon™ Spray Recipe" src="https://user-images.githubusercontent.com/5335625/148668124-70d261ea-4f9e-4b8d-87ed-2108d7c3aaca.png">
 
 Baddie-B-Gon™ Spray
 
