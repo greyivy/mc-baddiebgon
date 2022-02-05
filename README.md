@@ -30,4 +30,4 @@ Create a `baddiebgon.json5` file containing the following:
 
 `effectiveDistanceSpray` determines for how far the Baddie-B-Gon™ spray item is effective.
 
-`banHostileMobRegex` must be a Java-compatible regular expression. To ban all spiders and creepers, for example, use `".*(spider|creeper).*"`.
+`banHostileMobRegex` must be a Java-compatible regular expression. To ban all spiders and creepers, for example, use `.*(spider|creeper).*`.
