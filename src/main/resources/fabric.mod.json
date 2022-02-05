@@ -4,8 +4,16 @@
   "version": "${version}",
   "name": "Baddie-B-Gon™",
   "description": "Repels baddies, guaranteed or your money back!",
-  "authors": [],
-  "contact": {},
+  "authors": [
+    {
+      "name": "Ivy G"
+    }
+  ],
+  "contact": {
+    "homepage": "https://github.com/greyivy/mc-baddiebgon",
+    "issues": "https://github.com/greyivy/mc-baddiebgon/issues",
+    "sources": "https://github.com/greyivy/mc-baddiebgon"
+  },
   "license": "MIT",
   "icon": "assets/baddiebgon/icon.png",
   "environment": "*",
@@ -14,7 +22,9 @@
     "main": [
       "com.igrey.baddiebgon.BaddieBGon"
     ],
-    "modmenu": [ "com.igrey.baddiebgon.ModMenuApiImpl" ]
+    "modmenu": [
+      "com.igrey.baddiebgon.ModMenuApiImpl"
+    ]
   },
   "custom": {
     "modmenu": {
@@ -29,6 +39,10 @@
   "depends": {
     "fabricloader": ">=0.12.12",
     "fabric": "*",
-    "minecraft": "1.18.1"
+    "minecraft": "1.18.1",
+    "cloth-config2": "*"
+  },
+  "suggests": {
+    "mod-menu": "*"
   }
 }

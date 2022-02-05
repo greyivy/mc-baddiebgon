@@ -1,6 +1,7 @@
 plugins {
     id 'fabric-loom' version '0.10-SNAPSHOT'
     id 'maven-publish'
+    id "com.matthewprenger.cursegradle" version "1.4.0"
 }
 
 version = project.mod_version
@@ -84,5 +85,31 @@ publishing {
         // Notice: This block does NOT have the same function as the block in the top level.
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
+    }
+}
+
+curseforge {
+    apiKey = ''
+    project {
+        id = '565799'
+        changelog = 'Add additional hostile mobs'
+        releaseType = 'alpha'
+        addGameVersion 'Fabric'
+        addGameVersion '1.18.1'
+
+        mainArtifact(jar) {
+            displayName = "Baddie-B-Gon™ version: $project.version"
+            relations {
+                requiredDependency 'cloth-config'
+                optionalDependency 'modmenu'
+            }
+            afterEvaluate {
+                mainArtifact(remapJar)
+                uploadTask.dependsOn(remapJar)
+            }
+        }
+    }
+    options {
+        forgeGradleIntegration = false
     }
 }

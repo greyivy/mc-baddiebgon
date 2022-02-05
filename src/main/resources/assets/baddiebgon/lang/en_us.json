@@ -1,7 +1,7 @@
 {
   "text.autoconfig.baddiebgon.title":  "Baddie-B-Gon™",
   "text.autoconfig.baddiebgon.option.effectiveDistanceSpray": "Baddie-B-Gon™ Spray effective distance",
-  "text.autoconfig.baddiebgon.option.banHostileMobRegex": "Hostile mob ban list regex",
+  "text.autoconfig.baddiebgon.option.banHostileMobRegex": "Mob ban list regex",
   "text.autoconfig.baddiebgon.option.banHostileMobRegex.@Tooltip[0]": "e.g. to ban all spiders, use",
   "text.autoconfig.baddiebgon.option.banHostileMobRegex.@Tooltip[1]": ".*spider.*",
   "item.baddiebgon.spray": "Baddie-B-Gon™ Spray",
