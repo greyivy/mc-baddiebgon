@@ -2,6 +2,8 @@
 
 **A Fabric mod providing an item that repels hostile mobs and an optional global mob filter (similar to [Bad Mobs for Forge](https://www.curseforge.com/minecraft/mc-mods/bad-mobs)).**
 
+I built this because one of my best friends has arachnophobia! I wanted to play with hostile mobs and they didn't, and they _especially_ didn't want to see any spiders. Tested on 1.18 but likely works on older versions as well.
+
 
 # Recipe
 
@@ -30,4 +32,4 @@ Create a `baddiebgon.json5` file containing the following:
 
 `effectiveDistanceSpray` determines for how far the Baddie-B-Gon™ spray item is effective.
 
-`banHostileMobRegex` must be a Java-compatible regular expression. To ban all spiders and creepers, for example, use `".*(spider|creeper).*"`.
+`banHostileMobRegex` must be a Java-compatible regular expression based on Minecraft entity IDs. To ban all spiders and creepers, for example, use `.*(spider|creeper).*`.
