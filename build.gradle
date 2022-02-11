@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.10-SNAPSHOT'
+    id 'fabric-loom' version '0.11-SNAPSHOT'
     id 'maven-publish'
     id "com.matthewprenger.cursegradle" version "1.4.0"
 }
@@ -97,7 +97,7 @@ curseforge {
         addGameVersion 'Fabric'
         addGameVersion '1.18.1'
 
-        mainArtifact(jar) {
+        mainArtifact(remapJar) {
             displayName = "Baddie-B-Gon™ version: $project.version"
             relations {
                 requiredDependency 'cloth-config'
