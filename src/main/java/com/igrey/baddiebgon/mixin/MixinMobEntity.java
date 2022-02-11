@@ -13,52 +13,29 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.regex.Pattern;
-
 import static com.igrey.baddiebgon.BaddieBGon.ITEMS;
 import static com.igrey.baddiebgon.BaddieBGon.config;
 
 @Mixin(MobEntity.class)
 public abstract class MixinMobEntity extends LivingEntity {
-    private static String previousFilter = null;
-    private static Pattern pattern = null;
-    private static List<String> additionalHostileMobs = Arrays.asList(new String[]{ "entity.minecraft.slime", "entity.minecraft.ghast" });
-
     protected MixinMobEntity(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    private static void initializeRegex() {
-        // Cache pattern
-        if (!config.banHostileMobRegex.equals(previousFilter)) {
-            previousFilter = config.banHostileMobRegex;
-
-            if (config.banHostileMobRegex.length() > 0) {
-                pattern = Pattern.compile(config.banHostileMobRegex);
-            } else {
-                pattern = null;
-            }
-        }
-    }
-
     @Inject(at = @At("HEAD"), method = "checkDespawn()V")
     private void checkDespawn(CallbackInfo info) {
-        initializeRegex();
-
         String entityTypeId = this.getType().toString();
 
-        if (pattern != null) {
+        if (config.getPattern() != null) {
             // Ban mob by ID
-            if (pattern.matcher(entityTypeId).matches()) {
+            if (config.getPattern().matcher(entityTypeId).matches()) {
                 this.discard();
 
                 return;
             }
         }
 
-        boolean isHostile = additionalHostileMobs.indexOf(entityTypeId) > -1 || HostileEntity.class.isAssignableFrom(this.getClass());
+        boolean isHostile = config.additionalHostileMobs.indexOf(entityTypeId) > -1 || HostileEntity.class.isAssignableFrom(this.getClass());
         if (!isHostile) return; // Allow peaceful mobs to spawn
 
         for (PlayerEntity player : this.world.getPlayers()) {
