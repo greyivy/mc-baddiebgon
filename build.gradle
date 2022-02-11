@@ -1,11 +1,14 @@
 plugins {
     id 'fabric-loom' version '0.11-SNAPSHOT'
     id 'maven-publish'
-    id "com.matthewprenger.cursegradle" version "1.4.0"
+    id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
 version = project.mod_version
 group = project.maven_group
+
+Properties secrets = new Properties()
+secrets.load(project.rootProject.file('local.properties').newDataInputStream())
 
 repositories {
     // Add repositories to retrieve artifacts from in here.
@@ -89,7 +92,7 @@ publishing {
 }
 
 curseforge {
-    apiKey = ''
+    apiKey = secrets.get('apiKey')
     project {
         id = '565799'
         changelog = 'Add additional hostile mobs'
